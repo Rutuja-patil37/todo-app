@@ -1,11 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./App.css";
+function addTodo() {
+  const input = document.getElementById("todoInput");
+  const list = document.getElementById("todoList");
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  if (input.value === "") return;
+
+  const li = document.createElement("li");
+  li.textContent = input.value;
+
+  list.appendChild(li);
+  input.value = "";
+}
